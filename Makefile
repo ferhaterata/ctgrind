@@ -1,4 +1,4 @@
-all: libctgrind.so libctgrind.so.1
+all: libctgrind.so libctgrind.so.1 a.out
 
 libctgrind.so:
 	gcc -o libctgrind.so -shared ctgrind.c -Wall -std=c99 -fPIC -Wl,-soname,libctgrind.so.1
