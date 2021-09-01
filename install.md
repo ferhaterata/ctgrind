@@ -21,6 +21,7 @@ sudo make install
 cd ..
 # configure and make valgrind with ctgrind patch
 cd valgrind
+./autogen.sh
 ./configure --with-mpicc=/opt/openmpi-4.0.6/bin/mpicc --prefix=/opt/valgrind-3.16.1.ctgrind-patch
 make
 sudo make install # this is not necessary
