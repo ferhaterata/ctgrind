@@ -14,8 +14,6 @@ But memcheck already does this! In order to keep track of uninitialised data it 
 
 The valgrind patch does just that (against SVN r11097). It will intercept any calls to ct_poison and ct_unpoison in libctgrind.so*.
 
-patch --directory=../valgrind/ --strip=1 < valgrind.patch
-
 Let's look at a bad way to test a 128-bit MAC against a calculated value:
 
 char check16_bad(unsigned char *a, unsigned char *b) {
