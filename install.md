@@ -23,7 +23,7 @@ cd ..
 cd valgrind
 ./configure --with-mpicc=/opt/openmpi-4.0.6/bin/mpicc --prefix=/opt/valgrind-3.16.1.ctgrind-patch
 make
-sudo make install
+sudo make install # this is not necessary
 cd ..
 # run test
 cd ctgrind
