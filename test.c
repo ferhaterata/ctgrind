@@ -1,21 +1,21 @@
+#include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <string.h>
 
 #include "ctgrind.h"
 
-char check16_bad(unsigned char *a, unsigned char *b) {
+char check16_bad(unsigned char* a, unsigned char* b) {
   unsigned i;
   for (i = 0; i < 16; i++) {
-    if (a[i] != b[i])
-      return 0;
+    if (a[i] != b[i]) return 0;
   }
 
   return 1;
 }
 
-char check16_good(unsigned char *a, unsigned char *b) {
+char check16_good(unsigned char* a, unsigned char* b) {
   unsigned i;
   char result = 0;
 
@@ -26,13 +26,12 @@ char check16_good(unsigned char *a, unsigned char *b) {
   return !result;
 }
 
-char bad_memory_access(unsigned char *a) {
+char bad_memory_access(unsigned char* a) {
   static const char r[2] = {1, 0};
   return r[a[0] & 1];
 }
 
-int
-main() {
+int main() {
   unsigned char a[16], b[16];
 
   memset(a, 42, sizeof(a));
